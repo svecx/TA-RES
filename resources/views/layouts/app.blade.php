@@ -80,7 +80,7 @@
                         @endguest
                     </ul>
                     <!-- Navigation links -->
-                    <ul id="nav-column" class="nav flex-column mt-2 d-none d-md-none d-sm-block">
+                    <ul id="nav-column" class="nav flex-column mt-2 d-sm-block d-md-none">
                         <li class="nav-item">
                             <a class="nav-link {{ Route::currentRouteName() == 'home' ? 'active' : '' }}" href="{{ route('home') }}" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
                         </li>

@@ -53,7 +53,7 @@
                     <div style="flex: 1; padding-right: 20px;">
                         <h1 class="welcome-text">SELAMAT DATANG <br> DI SISTEM MANAJEMEN <br> DOKUMEN ELEKTRONIK</h1>
                         <!-- Chart Section -->
-                        <div class="d-flex justify-content-between flex-sm-column flex-md-row">
+                        <div class="d-flex justify-content-between flex-column flex-md-row">
                         <div style="margin-top: 30px; flex: 1;">
         <div style="width: 70%; height: 400px;">
             <canvas id="documentChart"></canvas>
