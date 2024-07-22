@@ -140,6 +140,40 @@
                 @endif
             </td>
         </tr>
+    @elseif($userJabatan === 'Mahasiswa')
+    <tr data-category="{{ $document->kategori_dokumen }}">
+            <td>{{ $no++ }}</td>
+            <td>{{ $document->judul_dokumen }}</td>
+            <td>{{ $document->deskripsi_dokumen }}</td>
+            <td>{{ $document->kategori_dokumen }}</td>
+            <td>{{ $document->created_by }}</td>
+            <td>{{ $document->validasi_dokumen }}</td>
+            <td style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $document->tahun_dokumen }}</td>
+            <td>
+                @if ($document->status_file === 0)
+                    <a href="{{ asset('storage/documents/' . $document->dokumen_file) }}" target="_blank">
+                        <i class="fa fa-file" aria-hidden="true"></i> <!-- Menggunakan ikon file -->
+                    </a>
+                @elseif ($document->status_file === 1)
+                    <a href="{{ $document->dokumen_link }}" target="_blank">
+                        <i class="fa fa-link" aria-hidden="true"></i> <!-- Menggunakan ikon link -->
+                    </a>
+                @endif
+            </td>
+            <td>{{ $document->tags }}</td>
+            <td>{{ $document->view }}</td>
+            <td>
+                @if ($document->status_file === 0)
+                    <a href="{{ asset('storage/documents/' . $document->dokumen_file) }}" class="btn btn-link p-0" style="display: inline-block; margin-right: 0.3rem" download>
+                        <i class="fa fa-download"></i>
+                    </a>
+                @elseif ($document->status_file === 1)
+                    <a href="{{ $document->dokumen_link }}" style="text-decoration: none; display: inline-block; margin-right: 0.3rem" class="btn btn-link p-0" target="_blank">
+                        <i class="fa-solid fa-square-arrow-up-right" aria-hidden="true"></i>
+                    </a>
+                @endif
+            </td>
+        </tr>
     @else
         @if(in_array($userJabatan, $views) || in_array('All', $views))
             <tr data-category="{{ $document->kategori_dokumen }}">
